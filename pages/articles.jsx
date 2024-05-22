@@ -2,6 +2,7 @@ import ArticleCard from '../components/ArticleCard';
 import styles from '../styles/ArticlesPage.module.css';
 
 const ArticlesPage = ({ articles }) => {
+  articles = [];
   return (
     <>
       <h3>
