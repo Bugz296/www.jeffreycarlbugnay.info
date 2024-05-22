@@ -60,3 +60,24 @@
 .underline:hover {
   background-size: 100% 88%;
 }
+
+.disabled {
+  padding: 0.2rem 0;
+  font-size: 0.9rem;
+  letter-spacing: 0;
+  cursor: default;
+  color: rgb(124, 122, 122);
+  text-decoration: none;
+  background-image: linear-gradient(
+    120deg,
+    var(--accent-color) 100%,
+    var(--accent-color) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+}
+.disabled:hover {
+  background-size: 100% 88%;
+}

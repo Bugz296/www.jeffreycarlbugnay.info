@@ -1,0 +1,41 @@
+header{
+    background-color: #b3b3b3;
+}
+section{
+    background-color: #cccccc;
+}
+footer{
+    background-color: #ffff9a;
+}
+header, section footer{
+    padding: 5px;
+    margin-bottom: 0px;
+    display: block; 
+}
+span{
+    font-weight: bold;
+}
+.desktop, .tablet, .phone{
+    display: none;
+}
+@media only screen and (max-width: 480px){
+    .phone{
+        display: block;
+    }
+    section{
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 481px){
+    .tablet{
+        display: block;
+    }
+}
+@media only screen and (min-width: 1024px){
+    .desktop{
+        display: block;
+    }
+    .tablet{
+        display: none;
+    }
+}

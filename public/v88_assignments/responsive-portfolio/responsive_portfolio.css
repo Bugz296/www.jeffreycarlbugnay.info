@@ -1,0 +1,273 @@
+header{
+    height: 55px;
+    background-color: #f5f5f5;
+}
+header h1{
+    margin: 5px;
+    font-family: Comic Sans MS;
+}
+header h3{
+    margin: 11px 41px;
+    font-family: sans-serif;
+    font-size: 21px;
+}
+a{
+    color: black;
+}
+#portfolio-name{
+    display: inline-block;
+    padding: 0px 20px 0px;
+}
+#description{
+    text-align: right;
+    vertical-align: top;
+    float: right;
+}
+#container{
+    background-color: #67525c;
+}
+#profile-picture{
+    display: inline-block;
+}
+#profile-picture img{
+    border: 5px solid gray;
+}
+#about{
+    float: right;
+    background-color: #dccedb;
+}
+#description-box-about{
+    background-color: #dccedb;
+}
+#description-box-about p{
+    font-family: Arial;
+    font-size: 16px;
+}
+#first-box, #second-box, #third-box{
+    background-color: #dccedb;
+}
+.header-tab{
+    height: 40px;
+    background-color: #adacb1;
+}
+.header-tab h2{
+    margin: 7px 10px;
+    font-size: 20px;
+    font-family: Helvetica, sans-serif;
+    color: white;
+    display: inline-block;
+}
+.header-tab h3{
+    margin: 7px 10px;
+    color: white;
+    display: inline-block;
+}
+ul, li{
+    list-style-type: none;
+    display: inline-block;
+}
+#language-icons ul li img{
+    margin-left: 5px;
+    margin-top: 0px;
+    width: 42px;
+    height: 42px;
+}
+.description-box{
+    text-align: justify;
+    font-family: Arial;
+    font-size: 14px;
+}
+.website-link{
+    border-radius: 10px;
+    display: inline-block;
+    height: 27px;
+    margin: 0px 80px;
+    border: 1px solid black;
+    background-color: #407d61;
+}
+.website-link h5{
+    display: inline-block;
+    margin: 5px 5px;
+    color: white;
+}
+footer{
+    height: 70px;
+    text-align: center;
+    font-family: Arial;
+    font-size: 14px;
+    background-color: #f5f5f5;
+}
+#site-links{
+    margin-top: 16px;
+    display: inline-block;
+}
+#site-links a{
+    vertical-align: top;
+    font-style: italic;
+}
+
+footer img{
+    width: 20px;
+    height: 20px;
+}
+@media only screen and (max-width: 672px){
+    #profile-picture img{
+        width: 80%;
+        height: 50%;
+    }
+    #profile-picture{
+        text-align: center;
+    }
+    #description{
+        display: none;
+    }
+    header{
+        text-align: center;
+    }
+    #second-section img{
+        width: 80%;
+        height: 50%;
+    }
+    #second-section{
+        text-align: center;
+    }
+}
+@media only screen and (min-width: 672px){
+    #profile-picture img{
+        width: 80%;
+        height: 50%;
+    }
+    #profile-picture{
+        text-align: center;
+    }
+    #second-section{
+        text-align: center;
+    }
+    #second-section img{
+        width: 80%;
+        height: 50%;
+    }
+    footer img{
+        width: 20px;
+        height: 20px;
+    }
+    #language-icons ul{
+        display: block;
+    }
+}
+@media only screen and (min-width: 970px){
+    #main-container{
+        width: 970px;
+        margin: auto;
+    }
+    #description{
+        text-align: right;
+        vertical-align: top;
+        float: right;
+    }
+    #container{
+        padding: 25px;
+        height: 840px;
+    }
+    #profile-picture{
+        display: inline-block;
+    }
+    #profile-picture img{
+        margin-top: -2px;
+        width: 400px;
+        height: 262px;
+        border: 5px solid gray;
+    }
+    #about{
+        width: 485px;
+        height: 270px;
+        float: right;
+        background-color: #dccedb;
+        margin-top: -5px;
+    }
+    #description-box-about{
+        height: 210px;
+        background-color: #dccedb;
+        padding: 0px 10px;
+    }
+    #description-box-about p{
+        font-family: Arial;
+        font-size: 16px;
+    }
+    #second-section{
+        margin: 20px 0px;
+    }
+    #first-box, #second-box, #third-box{
+        height: 555px;
+        width: 290px;
+        display: inline-block;
+        background-color: #dccedb;
+    }
+    #second-box, #third-box{
+        margin: 0px 0px 0px 20px;
+    }
+    .header-tab{
+        height: 40px;
+    }
+    .header-tab h2{
+        margin: 7px 10px;
+        font-size: 20px;
+        display: inline-block;
+    }
+    #second-section img{
+        height: 152px;
+        width: 100%;
+    }
+    ul, li{
+        padding: 0px;
+        margin-top: 5px;
+    }
+    #language-icons{
+        padding: 0px 11px;
+        height: 163px;
+        text-align: left;
+    }
+    #language-icons ul li img{
+        margin-left: 5px;
+        margin-top: 0px;
+        width: 42px;
+        height: 42px;
+    }
+    .description-box{
+        height: 155px;
+        margin-top: -20px;
+        padding: 10px;
+        text-align: justify;
+        font-family: Arial;
+        font-size: 14px;
+    }
+    .website-link{
+        border-radius: 10px;
+        display: inline-block;
+        height: 27px;
+        margin: 0px 80px;
+    }
+    .website-link h5{
+        display: inline-block;
+        margin: 5px 5px;
+    }
+    footer{
+        height: 70px;
+        font-size: 14px;
+    }
+    footer img{
+        width: 20px;
+        height: 20px;
+    }
+    #site-links{
+        margin-top: 16px;
+        display: inline-block;
+    }
+    #site-links a{
+        vertical-align: top;
+        font-style: italic;
+    }
+    #about{
+        margin: 0px;
+    }
+}

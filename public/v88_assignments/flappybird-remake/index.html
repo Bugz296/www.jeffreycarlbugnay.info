@@ -1,0 +1,211 @@
+<style>
+body{
+    margin: 0px;
+    background-color: black;
+    font-family: Consolas;
+}
+#background{
+    background-image: url('img/background-day.png');
+    height: 510px;
+    width: 290px;
+}
+#gameOver{
+    color: rgb(238, 241, 21);
+    font-family: Consolas;
+    font-size: 50px;
+    text-align: center;
+    height: 510px;
+    width: 290px;
+    position: absolute;
+    z-index: 99;
+}
+#score{
+    height: 30px;
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 9;
+}
+#hero{
+    background-image: url('img/blue2.png');
+    background-repeat: no-repeat;
+    height: 24px;
+    width: 34px;
+    position: absolute;
+    left: 60px;
+    top: 250px;
+    font-weight: bold;
+    color: white;
+    z-index: 2;
+}
+#base{
+    background-image: url('img/base.png');
+    background-repeat: repeat;
+    height: 112px;
+    width: 290px;
+    position: absolute;
+    top: 398px;
+    z-index: 3;
+}
+#base1{
+    background-image: url('img/base.png');
+    background-repeat: repeat;
+    height: 112px;
+    width: 290px;
+    position: absolute;
+    top: 398px;
+    left: 290px;
+    z-index: 3;
+}
+.pipeUp{
+    position: absolute;
+    background-image: url('img/pipe-green.png');
+    background-size: cover;
+    transform: rotate(180deg);
+    width: 52px;
+    top: 0;
+    left: 290px;
+    z-index: 4;
+}
+.pipeDown{
+    position: absolute;
+    background-image: url('img/pipe-green.png');
+    background-size: cover;
+    width: 52px;
+    left: 290px;
+    transform: scaleX(-1);
+    z-index: 5;
+}
+#playGround{
+    height: 398px;
+    z-index: 6;
+}
+#hider{
+    position: fixed;
+    height: 510px;
+    width: 400px;
+    top: 0px;
+    left: 290px;
+    background-color: black;
+    z-index: 9999;
+}
+</style>
+<html>
+    <head>
+        <title>Flappy Bird Remake</title>
+    </head>
+    <body>
+        <div id="gameOver"></div>
+        <div id="background">
+            <div id="hero"></div>
+            <div id="score">0</div>
+            <div id="base"></div>
+            <div id="base1"></div>
+            <div id="playGround"></div>
+        </div>
+        <div id="hider"></div>
+    </body>
+
+    <script>
+        var hero = {
+            y: 250
+        };
+        var base = 0;
+        var base1 = 290;
+        var score = 0;
+        var pipeUpArr = [], pipeDownArr = [];
+        var whichFrame = 1;
+        let die = new Audio ('sounds/die.wav');
+        let hit = new Audio ('sounds/hit.wav');
+        let point = new Audio ('sounds/point.ogg');
+        let swoosh = new Audio ('sounds/swoosh.ogg');
+        let wing = new Audio ('sounds/wing.ogg');
+        //#region Game Intervals 
+        var generatePipesInterval = setInterval(generatePipes,1500);
+        var displayHeroInterval = setInterval(displayHero,50);
+        var pipeInterval = setInterval(displayMovePipes,50);
+        //#endregion
+        
+        //#region Display Functions 
+        function displayHero(){
+            hero.y+=5;
+            document.getElementById('hero').style.top = hero.y;
+
+            if(hero.y-10 < 0){
+                hero.y=5;
+            }
+            document.getElementById('hero').style.backgroundImage = "url('img/blue"+whichFrame+".png')";
+            whichFrame++;
+            if(whichFrame>=3){
+                whichFrame = 1;
+            }
+            if(pipeUpArr.length != 0){
+                if(pipeUpArr[0].x<0){
+                    pipeUpArr[0]=pipeUpArr[1];
+                    pipeUpArr.pop();
+                    pipeDownArr[0]=pipeDownArr[1];
+                    pipeDownArr.pop();
+                    score+=10;
+                    point.play();
+                    document.getElementById('score').innerHTML = score;
+                }
+
+                if(((pipeDownArr[0].x < 94) && ((hero.y+24) > pipeDownArr[0].y)) || (((94 > pipeUpArr[0].x)) && (hero.y < pipeUpArr[0].height)) || (hero.y+20 > 398)){
+                    if(((pipeDownArr[0].x < 94) && ((pipeDownArr[0].x+50) > 60) && ((hero.y+24) > pipeDownArr[0].y)) || ((pipeUpArr[0].x < 94) && ((pipeUpArr[0].x+50) > 60)) || ((hero.y+20) > 398)){
+                        clearInterval(pipeInterval);
+                        clearInterval(displayHeroInterval);
+                        clearInterval(generatePipesInterval);
+                        if(hero.y+20 > 398){
+                            die.play();
+                        }else{
+                            hit.play();
+                        }
+                        document.getElementById('background').style.filter = "grayscale(100%)";
+                        document.getElementById('score').style.visibility = "hidden";
+                        document.getElementById('gameOver').innerHTML = "<h2>SCORE<br>"+score+"</h2>";
+                    }
+                }                
+            }
+        }
+
+        function displayMovePipes(){
+            var output="";
+            base-=5;
+            base1-=5;
+            if(base <= -290 || base1 <= 0){
+                base = 0;
+                base1 = 290;
+            }
+            document.getElementById('base').style.left = base;
+            document.getElementById('base1').style.left = base1;
+
+            for(var i=0;i<pipeUpArr.length;i++){
+                pipeUpArr[i].x-=5;
+                pipeDownArr[i].x-=5;
+                output+="<div class='pipeUp' id='pipeUp"+i+"' style='height:"+pipeUpArr[i].height+"; left:"+pipeUpArr[i].x+"'></div><div class='pipeDown' id='pipeDown"+i
+                    +"'style='height:"+pipeDownArr[i].height+"; top:"+(pipeUpArr[i].height+100)+"px; left:"+pipeDownArr[i].x+"'></div>";
+            }
+            document.getElementById('playGround').innerHTML = output;
+        }
+        //#endregion
+        
+        function generatePipes(){
+            var pipeUpHeight = Math.floor(Math.random()*198);
+            if(pipeUpHeight<50){
+                pipeUpHeight=50;
+            }
+            pipeUpArr.push({height: pipeUpHeight,y:0,x:290});
+            pipeDownArr.push({height: 298-pipeUpHeight,y:pipeUpHeight+100,x:290});
+        }
+        displayMovePipes();
+        document.onkeydown = function(e){
+            if(e.keyCode == 32){
+                hero.y-=35;
+                wing.play();
+            }
+        }
+    </script>
+</html>

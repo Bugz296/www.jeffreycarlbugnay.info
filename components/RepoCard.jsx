@@ -9,7 +9,7 @@ const RepoCard = ({ repo }) => {
   return (
     <div className={styles.card}>
       <div>
-        <h3 className={styles.title}>{repo.name}</h3>
+        <h4 className={styles.title}>{repo.name}</h4>
         <p>{repo.description}</p>
       </div>
       <div className={styles.stats}>

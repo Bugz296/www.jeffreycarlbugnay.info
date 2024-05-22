@@ -26,14 +26,20 @@ const ProjectCard = ({ project }) => {
               Source Code
             </a>
           )}
-          <a
+          {project.demo && (<a
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.underline}
           >
             Live Demo
-          </a>
+          </a>)}
+          {project.is_tba && (<a
+            disabled={true}
+            className={styles.disabled}
+          >
+            TBA
+          </a>)}
         </div>
       </div>
     </div>

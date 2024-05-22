@@ -10,20 +10,18 @@ const ContactPage = () => {
 
   const submitForm = async (e) => {
     e.preventDefault();
-    console.log(process.env.NEXT_PUBLIC_API_URL);
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/contact`, {
+
+    await fetch(`/api/contact`, {
       method: 'POST',
       body: JSON.stringify({ name, email, subject, message }),
     });
-    if (res.ok) {
-      alert('Your response has been received!');
-      setName('');
-      setEmail('');
-      setSubject('');
-      setMessage('');
-    } else {
-      alert('There was an error. Please try again in a while.');
-    }
+    
+    setName('');
+    setEmail('');
+    setSubject('');
+    setMessage('');
+
+    alert("Your message has been sent!");
   };
 
   return (

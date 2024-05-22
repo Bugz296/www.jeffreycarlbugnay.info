@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>jQuery Function</title>
+    <style>
+        body{
+            margin: auto;
+            text-align: center;
+        }
+        div{
+            width: 500px;
+            border-bottom: 1px solid black;
+            margin: auto;
+            padding: 20px;
+        }
+        h1{
+            text-align: center;
+        }
+        span{
+            background-color: rgb(11, 52, 105);
+            color: white;
+            padding: 5px;
+            display: block;
+        }
+        p{
+            text-align: left;
+            color: black;
+        }
+        #show{
+            display: none;
+        }
+        #slideDown, #fadeIn{
+            display: none;
+        }
+        .colorItRed{
+            color: red;
+        }
+        #val_textbox{
+            width: 200px;
+            text-align: center;
+        }
+        #val{
+            text-align: center;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('#hide').click(function(){
+                $(this).hide();
+            });
+            $('#show_btn').click(function(){
+                $('#show').show();
+            });
+            $('#toggle_btn').click(function(){
+                $('#toggle').toggle();
+            });
+            $('#slideDown_btn').click(function(){
+                $('#slideDown').slideDown("slow");
+            });
+            $('#slideUp_btn').click(function(){
+                $('#slideUp').slideUp("slow");
+            });
+            $('#slideToggle_btn').click(function(){
+                $('#slideToggle').slideToggle("slow");
+            });
+            $('#fadeIn_btn').click(function(){
+                $('#fadeIn').fadeIn("slow");
+            });
+            $('#fadeOut_btn').click(function(){
+                $('#fadeOut').fadeOut("slow");
+            });
+            $('#fadeOut_btn').click(function(){
+                $('#fadeOut').fadeOut("slow");
+            });
+            $('#addClass_btn').click(function(){
+                $('#addClass').addClass('colorItRed');
+            });
+            $('#before_btn').click(function(){
+                $('#before_btn').before("<span>I am \"THE BEFORE\"</span>");
+            });
+            $('#after_btn').click(function(){
+                $('#after_btn').after("<span>I am \"THE AFTER\"</span>");
+            });
+            $('#append_btn').click(function(){
+                $('#append_btn').append(" I am an \"New here\".");
+            });
+            $('#html_btn').click(function(){
+                $(this).html("<h1>I am a new HTML, you see!</h1>");
+            });
+            $('#attr_btn').click(function() {
+                $('#attr').text("I have color now! and I can dispay HTML Tags: <html><head></head> etc.");
+                $('#attr').attr("class","colorItRed");
+            });
+            $("#val_textbox").keyup(function() {
+                    var value = $(this).val();
+                    $("#val").text(value);
+                })
+            .keyup();
+        }); 
+    </script>
+</head>
+<body>
+    <div>
+        <h1>.click & .hide</h1>
+        <span id="hide">Click Me to hide</span>
+    </div>
+    <div>
+        <h1>.show</h1>
+        <span id="show_btn">Click Me to show a Text</span><p id="show">Surprise?</p>
+    </div>
+    <div>
+        <h1>.toggle</h1>
+        <span id="toggle_btn">Click Me</span><p id="toggle">Click the button to show/hide this text</p>
+    </div>
+    <div>
+        <h1>.slideDown</h1>
+        <span id="slideDown_btn">Click Me to Slide Down a text</span><p id="slideDown">Weeee!</p>
+    </div>
+    <div>
+        <h1>.slideUp</h1>
+        <span id="slideUp_btn">Click Me to Slide Up a text</span><p id="slideUp">Weeee!</p>
+    </div>
+    <div>
+        <h1>.slideToggle</h1>
+        <span id="slideToggle_btn">Click Me</span><p id="slideToggle">Click the button to toggle this text to either Slide Up or Down</p>
+    </div>
+    <div>
+        <h1>.fadeIn</h1>
+        <span id="fadeIn_btn">Click Me</span><p id="fadeIn">Click the button to fade in this text</p>
+    </div>
+    <div>
+        <h1>.fadeOut</h1>
+        <span id="fadeOut_btn">Click Me</span><p id="fadeOut">Click the button to fade out this text</p>
+    </div>
+    <div>
+        <h1>.addClass</h1>
+        <span id="addClass_btn">Click Me</span><p id="addClass">Click the button to add class that has a property of color: red</p>
+    </div>
+    <div>
+        <h1>.before</h1>
+        <span id="before_btn">Click Me</span>
+    </div>
+    <div>
+        <h1>.after</h1>
+        <span id="after_btn">Click Me</span>
+    </div>
+    <div>
+        <h1>.append</h1>
+        <span id="append_btn">Click Me</span>
+    </div>
+    <div>
+        <h1>.html</h1>
+        <span id="html_btn">Click Me and I'll show you what I am made of.</span>
+    </div>
+    <div>
+        <h1>.attr & .text</h1>
+        <span id="attr_btn">Change/Add class .colorItRed to the &lt;p&gt; tag below using .attr()</span><p id="attr">I'm just a plain white text.</p>
+    </div>
+    <div>
+        <h1>.val</h1>
+        <input type="text" id="val_textbox" placeholder="Type anything and I will imitate"><p id="val"></p>
+    </div>
+</body>
+</html>

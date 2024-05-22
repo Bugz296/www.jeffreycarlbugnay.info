@@ -1,37 +1,92 @@
 [
   {
     "id": 1,
-    "name": "Driwwwle",
-    "image": "https://imgur.com/kbGs6zH.png",
-    "description": "A platform for web developers to showcase their projects",
-    "tags": ["next", "node", "mongodb", "tailwind", "react-query"],
-    "source_code": "https://github.com/itsnitinr/driwwwle-v2",
-    "demo": "https://driwwwle.com/"
+    "name": "CodingDojo LP3",
+    "image": "/cdlogo.png",
+    "description": "Learning Platform. I contributed to the development of the learning platform for CodingDojo over a three-year period. I developed features such as notifications, payment processing, survey management, analytics, dashboards, and various scripts.",
+    "tags": ["javascript", "mysql", "expressJS", "reactJS", "nodeJS", "stripe", "sendgrid", "redux", "AWS", "sentry", "GTM", "jquery", "selenium", "jwt", "chai", "mocha", "ejs", "fetchAPI"],
+    "demo": "https://login.codingdojo.com/"
   },
   {
     "id": 2,
-    "name": "PCB Cupid",
-    "image": "https://imgur.com/tAZotn3.png",
-    "description": "E-commerce website for a PCB manufacturing company",
-    "tags": ["react", "node", "mongodb", "redux", "razorpay", "material-ui"],
-    "demo": "https://www.pcbcupid.com/"
+    "name": "DTISSF",
+    "image": "/dti.png",
+    "description": "Information System. A flagship project of the Department of Trade and Industry aimed at improving MSME productivity and efficiency through better access to technology. SSF Project is meant to improve MSME competitiveness by providing machinery, equipment, tools, systems, accessories, and other auxiliary items, skills, and knowledge under a shared system.",
+    "tags": ["javascript", "reactJS", "nodeJS", "expressJS", "viteJS", "mysql", "tailwind", "zod", "zustand"],
+    "is_tba": true
   },
   {
     "id": 3,
-    "name": "HealthyWays",
-    "image": "https://imgur.com/8FFqaX8.png",
-    "description": "A food ordering platform for healthy and home-cooked meals",
-    "tags": ["react", "node", "mongodb", "redux", "razorpay", "material-ui"],
-    "source_code": "https://github.com/itsnitinr/healthyways",
-    "demo": "https://healthyways.herokuapp.com/"
+    "name": "CD CRM",
+    "image": "/cdcrm.png",
+    "description": "CRM. Managing the company's interactions with current and potential students. It employs data analysis to study large amounts of information, helping businesses improve customer relationships, streamline processes, and enhance profitability.",
+    "tags": ["php", "codeigniter", "zapier", "mandrill", "hubspot", "mysql", "jquery", "bootstrap"],
+    "demo": "https://letsrock.codingdojo.com/"
   },
   {
     "id": 4,
+    "name": "CodingDojo LP2",
+    "image": "/cdlogo2.png",
+    "description": "Learning Platform. On CodingDojo's second learning platform, I primarily focused on payment integrations and managing Alumni Pass subscriptions using the Stripe API.",
+    "tags": ["rubyonrails", "ORM", "AWS", "stripe", "docker", "vueJS", "sendgrid", "omniauth", "sentry", "sass", "jquery", "bootstrap"],
+    "demo": "https://learn.codingdojo.com/"
+  },
+  {
+    "id": 5,
+    "name": "CD Enroll App",
+    "image": "/enrollapp.png",
+    "description": "CRM. Manage the registration process for various services or programs, such as courses, events, or memberships. It streamlines the enrollment procedure by allowing users to sign up online, manage their profiles, and track their participation. Designed to improve user experience and operational efficiency by automating and simplifying the enrollment process.",
+    "tags": ["rubyonrails", "ORM", "mandrill", "mysql", "jquery", "bootstrap"],
+    "demo": "https://enroll.codingdojo.com/signin"
+  },
+  {
+    "id": 6  ,
+    "name": "HackerHero Beta",
+    "image": "/hh.png",
+    "description": "Learning Platform. The website aims to help users develop their coding abilities, enhance problem-solving skills, and prepare for technical interviews or competitive programming contests. It is particularly useful for those looking to advance their careers in software development or related fields.",
+    "tags": ["javascript", "expressJS", "nodeJS", "mysql", "jquery", "sentry", "bootstrap"],
+    "demo": "https://www.hackerhero.com/"
+  },
+  {
+    "id": 7,
     "name": "VSCode Portfolio",
-    "image": "https://imgur.com/mKkz0iz.png",
-    "description": "A themeable and developer-centric portfolio based on the VSCode",
-    "tags": ["next", "css-modules"],
-    "source_code": "https://github.com/itsnitinr/vscode-portfolio",
-    "demo": "http://vscode-portfolio.vercel.app/"
+    "image": "/vsprofile.png",
+    "description": "Portfolio. A themeable and developer-centric portfolio based on the VSCode. I utilized this open-source website, refined it, and personally hosted it on my EC2 server in AWS for job search purposes.",
+    "tags": ["javascript", "nextJS", "reactJS", "sendgrid", "AWS"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info",
+    "demo": "https://www.jeffreycarlbugnay.info/"
+  },
+  {
+    "id": 8,
+    "name": "The Wall",
+    "image": "/thewall.png",
+    "description": "Assignment. As part of our annual performance review, we were required to record a continuous video demonstrating the creation of basic CRUD functionalities in a web app within two hours. This task included implementing complete validation and session-cookie management. Check the live video using the link below.",
+    "tags": ["javascript", "expressJS", "nodeJS", "mysql"],
+    "source_code": "https://github.com/Bugz296/the_wall",
+    "demo": "https://www.youtube.com/watch?v=I0g3D9wldis"
+  },
+  {
+    "id": 9,
+    "name": "E-commerce",
+    "image": "/e-commerce.png",
+    "description": "E-commerce. A themeable and developer-centric portfolio based on the VSCode.",
+    "tags": ["php", "codeigniter", "mysql", "jquery", "bootstrap"],
+    "source_code": "https://github.com/Bugz296/e-commerce"
+  },
+  {
+    "id": 10,
+    "name": "Simple 1942 Game",
+    "image": "/e-commerce.png",
+    "description": "Replication of the classic arcade game \"1942\". The project features the iconic top-down scrolling shooter gameplay where players control an aircraft, engaging in aerial combat with enemy planes. This project showcases my skills in JavaScript, HTML5 Canvas, and game development principles, demonstrating my ability to create engaging and interactive web-based games.",
+    "tags": ["php", "codeigniter", "mysql", "jquery", "bootstrap"],
+    "source_code": "https://github.com/Bugz296/e-commerce"
+  },
+  {
+    "id": 11,
+    "name": "Simple 1942 Game",
+    "image": "/e-commerce.png",
+    "description": "Replication of the classic arcade game \"1942\". The project features the iconic top-down scrolling shooter gameplay where players control an aircraft, engaging in aerial combat with enemy planes. This project showcases my skills in JavaScript, HTML5 Canvas, and game development principles, demonstrating my ability to create engaging and interactive web-based games.",
+    "tags": ["php", "codeigniter", "mysql", "jquery", "bootstrap"],
+    "source_code": "https://github.com/Bugz296/e-commerce"
   }
 ]

@@ -9,17 +9,17 @@
 }
 
 /* Tags */
-.react {
+.reactJS {
   border: 0.1rem solid rgb(97, 218, 251);
 }
-.react:hover {
+.reactJS:hover {
   background: rgba(97, 218, 251, 0.25);
 }
 
-.node {
+.nodeJS {
   border: 0.1rem solid rgb(131, 205, 41);
 }
-.node:hover {
+.nodeJS:hover {
   background: rgba(131, 205, 41, 0.25);
 }
 
@@ -35,34 +35,6 @@
 }
 .redux:hover {
   background: rgba(118, 74, 188, 0.25);
-}
-
-.razorpay {
-  border: 0.1rem solid rgb(82, 143, 240);
-}
-.razorpay:hover {
-  background: rgba(82, 143, 240, 0.25);
-}
-
-.material-ui {
-  border: 0.1rem solid rgb(25, 118, 210);
-}
-.material-ui:hover {
-  background: rgba(25, 118, 210, 0.25);
-}
-
-.bulma {
-  border: 0.1rem solid rgb(0, 209, 178);
-}
-.bulma:hover {
-  background: rgb(0, 209, 178, 0.25);
-}
-
-.next {
-  border: 2px solid rgb(0, 112, 243);
-}
-.next:hover {
-  background: rgba(0, 112, 243, 0.25);
 }
 
 .tailwind {
@@ -84,4 +56,186 @@
 }
 .css-modules:hover {
   background: rgba(21, 114, 182, 0.25);
+}
+
+.mysql {
+  border: 0.1rem solid rgb(18, 102, 211);
+}
+.mysql:hover {
+  background: rgba(18, 102, 211, 0.25);
+}
+
+.expressJS {
+  border: 0.1rem solid rgb(221, 217, 4);
+}
+.expressJS:hover {
+  background: rgba(221, 217, 4, 0.25);
+}
+
+.stripe {
+  border: 0.1rem solid rgb(145, 52, 231);
+}
+.stripe:hover {
+  background: rgba(145, 52, 231, 0.25);
+}
+
+.sendgrid {
+  border: 0.1rem solid rgb(167, 211, 223);
+}
+.sendgrid:hover {
+  background: rgba(167, 211, 223, 0.25);
+}
+
+.AWS {
+  border: 0.1rem solid rgb(243, 179, 3);
+}
+.AWS:hover {
+  background: rgba(243, 179, 3, 0.25);
+}
+
+.sentry {
+  border: 0.1rem solid rgb(72, 78, 78);
+}
+.sentry:hover {
+  background: rgba(72, 78, 78, 0.25);
+}
+
+.GTM {
+  border: 0.1rem solid rgb(3, 139, 250);
+}
+.GTM:hover {
+  background: rgba(3, 139, 250, 0.25);
+}
+
+.selenium {
+  border: 0.1rem solid rgb(3, 250, 3);
+}
+.selenium:hover {
+  background: rgba(3, 250, 3, 0.25);
+}
+
+.nextJS {
+  border: 0.1rem solid rgb(116, 132, 134);
+}
+.nextJS:hover {
+  background: rgba(116, 132, 134, 0.25);
+}
+
+.javascript {
+  border: 0.1rem solid rgb(233, 152, 1);
+}
+.javascript:hover {
+  background: rgba(233, 152, 1, 0.25);
+}
+
+.jquery {
+  border: 0.1rem solid rgb(236, 218, 48);
+}
+.jquery:hover {
+  background: rgba(236, 218, 48, 0.25);
+}
+
+.rubyonrails {
+  border: 0.1rem solid rgb(228, 13, 13);
+}
+.rubyonrails:hover {
+  background: rgba(228, 13, 13, 0.25);
+}
+
+.html5 {
+  border: 0.1rem solid rgb(226, 224, 120);
+}
+.html5:hover {
+  background: rgba(226, 224, 120, 0.25);
+}
+
+.viteJS {
+  border: 0.1rem solid rgb(112, 4, 155);
+}
+.viteJS:hover {
+  background: rgba(112, 4, 155, 0.25);
+}
+
+.zod {
+  border: 0.1rem solid rgb(1, 49, 182);
+}
+.zod:hover {
+  background: rgba(1, 49, 182, 0.25);
+}
+
+.zustand {
+  border: 0.1rem solid rgb(168, 144, 4);
+}
+.zustand:hover {
+  background: rgba(168, 144, 4, 0.25);
+}
+
+.php {
+  border: 0.1rem solid rgb(81, 49, 122);
+}
+.php:hover {
+  background: rgba(81, 49, 122, 0.25);
+}
+
+.codeigniter {
+  border: 0.1rem solid rgb(199, 42, 22);
+}
+.codeigniter:hover {
+  background: rgba(199, 42, 22, 0.25);
+}
+
+.zapier {
+  border: 0.1rem solid rgb(185, 11, 40);
+}
+.zapier:hover {
+  background: rgba(185, 11, 40, 0.25);
+}
+
+.mandrill {
+  border: 0.1rem solid rgb(25, 182, 202);
+}
+.mandrill:hover {
+  background: rgba(25, 182, 202, 0.25);
+}
+
+.hubspot {
+  border: 0.1rem solid rgb(209, 111, 31);
+}
+.hubspot:hover {
+  background: rgba(209, 111, 31, 0.25);
+}
+
+.ORM {
+  border: 0.1rem solid rgb(209, 52, 31);
+}
+.ORM:hover {
+  background: rgba(209, 52, 31, 0.25);
+}
+
+.docker {
+  border: 0.1rem solid rgb(27, 86, 214);
+}
+.docker:hover {
+  background: rgba(27, 86, 214, 0.25);
+}
+
+.vueJS {
+  border: 0.1rem solid rgb(7, 80, 13);
+}
+.vueJS:hover {
+  background: rgba(7, 80, 13, 0.25);
+}
+
+.omniauth {
+  border: 0.1rem solid rgb(115, 119, 115);
+}
+.omniauth:hover {
+  background: rgba(115, 119, 115, 0.25);
+}
+
+.sass {
+  border: 0.1rem solid rgb(211, 134, 207);
+}
+.sass:hover {
+  background: rgba(211, 134, 207, 0.25);
 }

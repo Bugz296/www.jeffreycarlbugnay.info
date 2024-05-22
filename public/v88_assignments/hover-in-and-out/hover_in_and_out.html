@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Hover In/Out</title>
+    <style>
+        img{
+            display: block;
+            margin: 5px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            var swapSrc = function(){
+                var src1 = $(this).attr('src');
+                var src2 = $(this).attr('alt-src');
+                $(this).attr('src',src2);
+                $(this).attr('alt-src',src1);
+            }
+            $('img').hover(swapSrc, swapSrc);
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <img src="img/ninja0.png" alt-src="img/cat0.png">
+        <img src="img/ninja1.png" alt-src="img/cat1.png">
+        <img src="img/ninja2.png" alt-src="img/cat2.png">
+        <img src="img/ninja3.png" alt-src="img/cat3.png">
+    </div>
+</body>
+</html>

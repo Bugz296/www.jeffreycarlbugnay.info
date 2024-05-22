@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS Circles with Shapes</title>
+        <style>
+            a{
+                border: 1px solid black;
+                border-radius: 5px;
+                box-shadow: 2px 2px black;
+                padding: 5px;
+                width: 100px;
+                cursor: pointer;
+            }
+            a:hover{
+                border: 3px solid black;
+            }
+            .star{
+                border: 0px solid black;
+                border-radius: 0px;
+                box-shadow: 0px 0px black;
+                padding: 0px;
+                cursor: pointer;
+            }
+            .star:hover{
+                stroke-width: 3;
+            }
+            #main-container{
+                height: 700px;
+                margin-top: 10px;
+                border: 2px dashed black;
+            }
+            #green{
+                border: 3px solid black;
+                background-color: green;
+                color: white;
+            }
+            #blue{
+                background-color: blue;
+                color: white;
+            }
+            #red{
+                background-color: red;
+                color: white;
+            }
+            #circle{
+                border: 3px solid black;
+                border-radius: 40px;
+                background-color: green;
+            }
+            #rectangle{
+                height: 40px;
+                width: 60px;
+            }
+            p{
+                position: absolute;
+            }
+            .btn{
+                height: 40px;
+                width: 40px;
+                display: inline-block;
+                vertical-align: top;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <a id="green">Green</a>
+            <a id="blue">Blue</a>
+            <a id="red">Red</a>
+            <a id="reset">Reset</a>
+        </div>
+        <div style="margin-top: 20px;">
+            <a id="circle" class="btn"></a>
+            <a id="square" class="btn"></a>
+            <a id="rectangle" class="btn"></a>
+            <svg height="50" width="60" style="border: 0px solid black;" class="star">
+                <polygon points="0 50, 30 0, 50 50, 0 20, 60 20" class="star"
+                style="fill:none;stroke:black;stroke-width:1;fill-rule:nonzero;" />
+            </svg>
+        </div>
+        <div id="main-container"></div>
+    </body>
+    <script src="jsCirclesWithShapes.js"></script>
+    <script>
+        /*** Choosing Which Color & Makes Other Selections Look Like Unselected ***/
+        let color = "green";
+        let shape = "circle";
+        document.getElementById('green').addEventListener('click', function(){
+            color = "green";
+            this.style.border = "3px solid black";
+            document.getElementById('blue').style.border = "1px solid black";
+            document.getElementById('red').style.border = "1px solid black";
+        });
+        document.getElementById('blue').addEventListener('click', function(){
+            color = "blue";
+            this.style.border = "3px solid black";
+            document.getElementById('green').style.border = "1px solid black";
+            document.getElementById('red').style.border = "1px solid black";
+        }); 
+        document.getElementById('red').addEventListener('click', function(){
+            color = "red";
+            this.style.border = "3px solid black";
+            document.getElementById('green').style.border = "1px solid black";
+            document.getElementById('blue').style.border = "1px solid black";
+        });
+        /*** Choosing Which Shape & Makes Other Shapes Look Like They're Unselected ***/
+        document.getElementById('circle').addEventListener('click', function(){
+            shape = "circle";
+            this.style.border = "3px solid black";
+            this.style.backgroundColor = color;
+            document.getElementById('square').style.border = "1px solid black";
+            document.getElementById('rectangle').style.border = "1px solid black";
+            document.getElementById('square').style.backgroundColor = "transparent";
+            document.getElementById('rectangle').style.backgroundColor = "transparent";
+        });
+        document.getElementById('square').addEventListener('click', function(){
+            shape = "square";
+            this.style.border = "3px solid black";
+            this.style.backgroundColor = color;
+            document.getElementById('circle').style.border = "1px solid black";
+            document.getElementById('rectangle').style.border = "1px solid black";
+            document.getElementById('circle').style.backgroundColor = "transparent";
+            document.getElementById('rectangle').style.backgroundColor = "transparent";
+        });
+        document.getElementById('rectangle').addEventListener('click', function(){
+            shape = "rectangle";
+            this.style.border = "3px solid black";
+            this.style.backgroundColor = color;
+            document.getElementById('square').style.border = "1px solid black";
+            document.getElementById('circle').style.border = "1px solid black";
+            document.getElementById('square').style.backgroundColor = "transparent";
+            document.getElementById('circle').style.backgroundColor = "transparent";
+        });
+        /*** This Resets the Page ***/
+        document.getElementById('reset').addEventListener('click', function(){
+            location.reload();
+        });
+        /*** Handles if User Clicks Somewhere inside div with id "canvas" ***/ 
+        document.getElementById('main-container').addEventListener('click', function(pos){
+            if(shape == "circle"){
+                let circle = new Circle(pos.clientX, pos.clientY, color);
+            }else if(shape == "square"){
+                let square = new Square(pos.clientX, pos.clientY, color);
+            }else{
+                let rectangle = new Rectangle(pos.clientX, pos.clientY, color);
+            }
+        });
+    </script>
+</html>

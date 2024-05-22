@@ -1,0 +1,250 @@
+<html>
+    <head> 
+        <title>Pacman</title>
+        <style>
+            body{
+                background-color: black;
+                margin: 0px;
+            }
+            div.row div{
+                width: 40px;
+                height: 40px;
+                display: inline-block;
+            }
+            div.brick{
+                background-color:rgb(84, 84, 206);
+            }
+            div.coin{
+                background-image: url('coin.gif');
+                background-size: 50%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            div#pacman{
+                background-image: url('pacman.gif');
+                background-size: cover;
+                background-repeat: no-repeat;
+                position: absolute;
+                height: 40px;
+                width: 40px;
+            }
+            div#score{
+                color: white;
+                font-family: Consolas;
+                height: 40px;
+                width: 100px;
+                border: 1px solid white;
+                position: absolute;
+                top: 0px;
+                right: 20px;
+                text-align: center;
+                font-size: 30px;
+            }
+            div.cherry{
+                background-image: url('cherry.gif');
+                background-size: 50%;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            div#ghost{
+                background-image: url('ghost.gif');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 40px;
+                width: 40px;
+                position: absolute;
+                top:80px;
+                left:80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="world"></div>
+        <div id="pacman"></div>
+        <div id="score">0</div>
+        <div id="ghost"></div>
+    <script>
+        var world = [];
+        var pacman = {
+            x: 1,
+            y: 1
+        }
+        var ghost = {
+            x: 12,
+            y: 4
+        }
+        var score = 0;
+        var prevNum = 0;
+        
+        function createWorld(){
+            /*for(var i=0;i<10;i++){
+                var subArr = [];
+                for(var j=0;j<20;j++){
+                    if(i==0 || j==0 || i==9 || j==19){
+                        subArr.push(1);
+                    }else{
+                        var randomNum = Math.random()*2;
+                        if(randomNum<1.8){
+                            subArr.push(0);
+                        }else if(randomNum<1.9){
+                            subArr.push(4);
+                        }else{
+                            subArr.push(1);
+                        }
+                    }
+                }
+                world.push(subArr);
+            }*/
+            var randNum = Math.floor(Math.random()*5);
+            if(randNum == 0){
+                world = [
+                [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                [1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1], 
+                [1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1], 
+                [1,0,0,0,0,0,1,1,1,0,0,1,1,1,0,0,0,0,0,1], 
+                [1,0,0,0,0,0,1,0,4,0,0,0,0,1,4,0,0,0,0,1], 
+                [1,0,1,0,0,0,1,1,1,0,0,1,1,1,0,0,0,1,0,1],  
+                [1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1], 
+                [1,0,1,1,1,1,0,0,0,0,0,0,0,0,0,1,1,1,0,1], 
+                [1,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1],               
+                [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+            ];
+            }else if(randNum == 1){
+                world = [
+                [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                [1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1], 
+                [1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1], 
+                [1,0,0,4,0,0,1,1,1,0,0,1,1,1,0,0,4,0,0,1], 
+                [1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,1], 
+                [1,0,1,0,0,0,1,0,1,1,1,1,0,1,0,0,0,1,0,1],  
+                [1,0,1,4,0,0,0,0,1,0,0,1,0,0,0,0,4,1,0,1], 
+                [1,0,1,1,1,1,0,0,1,0,0,1,0,0,0,1,1,1,0,1], 
+                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],               
+                [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+                ];
+            }else if(randNum == 2){
+                world = [
+                [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                [1,2,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,1], 
+                [1,0,0,0,0,1,0,0,0,0,0,0,1,1,1,0,0,0,0,1], 
+                [1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1], 
+                [1,0,0,0,0,1,0,1,1,0,0,0,0,1,0,0,1,1,0,1], 
+                [1,0,0,0,4,1,0,1,1,0,0,0,0,1,4,0,1,1,0,1],  
+                [1,0,0,1,1,1,0,0,0,0,0,1,0,1,0,0,0,0,0,1], 
+                [1,0,0,1,1,1,0,0,0,0,0,1,1,1,0,0,0,0,0,1], 
+                [1,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,1],               
+                [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+                ];
+            }else if(randNum == 3){
+                world = [
+                [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                [1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1], 
+                [1,0,1,4,0,0,0,0,0,0,0,0,0,0,0,0,4,1,0,1], 
+                [1,0,1,0,1,0,0,0,1,0,1,0,0,0,1,0,0,1,0,1], 
+                [1,0,1,0,0,1,0,1,0,0,0,1,0,1,0,0,0,1,0,1], 
+                [1,0,1,0,0,0,1,4,0,0,0,4,1,0,0,0,0,1,0,1], 
+                [1,0,1,0,0,1,0,1,0,0,0,1,0,1,0,0,0,1,0,1], 
+                [1,0,1,0,1,0,0,0,1,0,1,0,0,0,1,0,0,1,0,1], 
+                [1,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1],               
+                [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+                ];
+            }else if(randNum == 4){
+                world = [
+                [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+                [1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1], 
+                [1,0,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,0,1],
+                [1,0,1,0,0,0,1,1,1,1,1,1,1,1,0,0,0,1,0,1],
+                [1,0,1,0,1,0,0,0,4,1,1,4,0,0,0,1,0,1,0,1],
+                [1,0,0,0,1,0,0,0,0,1,1,0,0,0,0,1,0,0,0,1],
+                [1,0,1,1,1,1,1,0,0,1,1,0,0,1,1,1,1,1,0,1],
+                [1,0,0,0,1,4,0,0,1,1,1,1,0,0,4,1,0,0,0,1],
+                [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],              
+                [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+                ];
+            }
+        }
+        function displayWorld(){
+            var output="";
+            for(var i=0;i<world.length;i++){
+                output+='<div class="row">\n';
+                for(var j=0;j<world[i].length;j++){
+                    if(world[i][j]==1){
+                        output += "<div class='brick'></div>";
+                    }else if(world[i][j]==0){
+                        output += "<div class='coin'></div>";
+                    }else if(world[i][j]==2){
+                        output += "<div class='empty'></div>";
+                    }else if(world[i][j]==3){
+                        output += "<div class='pacman'></div>";
+                    }else if(world[i][j]==4){
+                        output += "<div class='cherry'></div>";
+                    }
+                }
+                output += '</div>';
+            }
+            document.getElementById('world').innerHTML = output;
+        }
+
+        function displayPacman(){
+            document.getElementById('pacman').style.left = pacman.x*40 +"px";
+            document.getElementById('pacman').style.top = pacman.y*40 +"px";
+        }
+
+        function displayScore(){
+            document.getElementById('score').innerHTML = score;
+        }
+
+        function displayGhost(){
+            document.getElementById('ghost').style.left = ghost.x*40 +"px";
+            document.getElementById('ghost').style.top = ghost.y*40 +"px";
+        }
+
+        function ghostMovement(){
+            var randomNum = Math.floor(Math.random()*4);
+            if(randomNum == prevNum){
+                randomNum = Math.floor(Math.random()*4);
+            }
+            if(randomNum == 0 && world[ghost.y+1][ghost.x]!=1){
+                ghost.y++;
+            }else if(randomNum == 1 && world[ghost.y-1][ghost.x]!=1){
+                ghost.y--;
+            }else if(randomNum == 3 && world[ghost.y][ghost.x+1]!=1){
+                ghost.x++;
+            }else if(randomNum == 2 && world[ghost.y][ghost.x-1]!=1){
+                ghost.x--;
+            }
+            prevNum = randomNum;
+            displayGhost();
+        }
+
+        createWorld();
+        displayWorld();
+        displayPacman();
+        displayGhost();
+        var gameLoop = setInterval(ghostMovement,300);
+        
+        document.onkeydown = function(e){
+            if(e.keyCode == 40 && world[pacman.y+1][pacman.x]!=1){ //down
+                pacman.y++;
+            }else if(e.keyCode == 38 && world[pacman.y-1][pacman.x]!=1){ //up
+                pacman.y--;
+            }else if(e.keyCode == 37 && world[pacman.y][pacman.x-1]!=1){ //left
+                pacman.x--;
+            }else if(e.keyCode == 39 && world[pacman.y][pacman.x+1]!=1){ //right
+                pacman.x++;
+            }
+            if(world[pacman.y][pacman.x]==0){
+                world[pacman.y][pacman.x]=2;
+                score+=10;
+            }else if(world[pacman.y][pacman.x]==4){
+                world[pacman.y][pacman.x]=2;
+                score+=20;
+            }
+            displayWorld();
+            displayPacman();
+            displayScore();
+        }
+    </script>
+    </body>
+</html>

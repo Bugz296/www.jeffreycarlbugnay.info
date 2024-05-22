@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Illustration from '../components/Illustration';
+import ProfilePicture from '../components/ProfilePicture';
 import styles from '../styles/HomePage.module.css';
 
 export default function HomePage() {
@@ -7,13 +7,17 @@ export default function HomePage() {
     <>
       <div className={styles.container}>
         <div className={styles.background}>
-          <h1>I BUILD</h1>
-          <h1>WEBSITES</h1>
+          <h5>DESIGN</h5>
+          <h4>DEVELOP</h4>
+          <h3>TESTING</h3>
+          <h2>MAINTAIN</h2>
+          <h1>DEPLOYMENT</h1>
+          <h2>WEB APPLICATIONS</h2>
         </div>
         <div className={styles.foreground}>
           <div className={styles.content}>
-            <h1 className={styles.name}>Nitin Ranganath</h1>
-            <h6 className={styles.bio}>Full Stack Web Developer</h6>
+            <h1 className={styles.name}>Jeffrey Carl</h1>
+            <h6 className={styles.bio}>Software Engineer</h6>
             <Link href="/projects">
               <button className={styles.button}>View Work</button>
             </Link>
@@ -21,7 +25,7 @@ export default function HomePage() {
               <button className={styles.outlined}>Contact Me</button>
             </Link>
           </div>
-          <Illustration className={styles.illustration} />
+          <ProfilePicture className={styles.profilePicture} />
         </div>
       </div>
     </>

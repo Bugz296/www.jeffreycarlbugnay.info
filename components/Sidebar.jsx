@@ -69,17 +69,20 @@ const Sidebar = () => {
         ))}
       </div>
       <div className={styles.sidebarBottom}>
-        {sidebarBottomItems.map(({ Icon, path }) => (
-          <div className={styles.iconContainer}>
+        {Object.entries(sidebarBottomItems).map(([key, { Icon, path }]) => (
+          <div className={styles.iconContainer} key={key}>
             <Link href={path} key={path}>
-              <Icon
-                fill={
-                  router.pathname === path
-                    ? 'rgb(225, 228, 232)'
-                    : 'rgb(106, 115, 125)'
-                }
-                className={styles.icon}
-              />
+              <div>
+                <Icon
+                  fill={
+                    router.pathname === path
+                      ? 'rgb(225, 228, 232)'
+                      : 'rgb(106, 115, 125)'
+                  }
+                  key={key}
+                  className={styles.icon}
+                />
+              </div>
             </Link>
           </div>
         ))}

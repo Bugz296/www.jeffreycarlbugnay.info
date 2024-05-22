@@ -1,0 +1,473 @@
+<style>
+body{
+	background-color:black;
+}
+#background{
+	width: 800px;
+	height:260px;
+	background: url('background_blanka.gif');
+	background-size: cover;
+}
+
+#background2{
+	width: 800px;
+	height:260px;
+	background: url('gameover.gif');
+	background-size: 95% 80%;
+	position: absolute;
+	top: 6;
+	left: 6;
+	border: 1px solid red;
+	background-color:rgba(26, 2, 2, 0.9);
+	visibility: hidden;
+	display: none;
+}
+#character1{
+	background: url('ken.png') 0px -80px;
+	width:70px;
+	height:80px;
+	position:absolute;
+}
+#winner{
+	color: white;
+	text-align: center;
+	font-size: 30px;
+	font-family: Consolas;
+}
+#character2{
+	background: url('ken.png') -70px -160px;
+	width:70px;
+	height:80px;
+	position:absolute;
+	filter: grayscale(80%);
+	transform: scaleX(-1);
+}
+#healthBar1{
+	width:200px;
+	height:15px;
+	background-color:lightgreen;
+	border:3px solid green;
+	position:absolute;
+	top:30px;
+	left:25px;
+}
+#healthBar2{
+	width:200px;
+	height:15px;
+	background-color:pink;
+	border:3px solid red;
+	position:absolute;
+	top:30px;
+	left:325px;
+}
+
+#healthText1{
+	height:15px;
+	background-color:none;
+	color: Red;
+	font-weight: 900;
+	position:absolute;
+	top:50px;
+	left:25px;
+	font-family: Consolas;
+}
+
+#healthText2{
+	height:15px;
+	background-color:none;
+	color: Blue;
+	font-weight: 900;
+	position:absolute;
+	top:50px;
+	left:325px;
+	font-family: Consolas;
+}
+
+.haduken{
+	background: url('ken.png') -8px -337px;
+	width:70px;
+	height:80px;
+	position:absolute;
+}
+
+.haduken1{
+	background: url('ken.png') -8px -337px;
+	width:70px;
+	height:80px;
+	position:absolute;
+	transform: scaleX(-1);
+}
+
+</style>
+
+<div id='background'>
+	<div id='character1'></div>
+	<div id='character2'></div>	
+	<div id="hadukens"></div>
+	<div id="hadukens1"></div>
+	<div id='healthBar1'></div>
+	<div id='healthText1'>100</div>
+	<div id='healthBar2'></div>
+	<div id='healthText2'>100</div>
+</div>
+<div id='background2'><br><br>
+	<div id="winner"></div>
+</div>
+
+
+<script>
+	//#region Initialize Variables 
+	let punch = new Audio('punch.wav');
+	let kick = new Audio('kick.wav');
+	let jump = new Audio('jump.wav');
+	let haduken = new Audio('haduken.mp3');
+	let explode = new Audio('explode.wav');
+	var action = 'STANDING';
+	var which_frame = 0;
+	var character1 = {
+		top: 185,
+		left: 100,
+		health: 100
+	};
+	var hadukens = [];
+	var hadukens1 = [];
+	var character2 = {
+		top: 185,
+		left: 400,
+		health: 100
+	};
+	//#endregion
+	//#region Functions 
+	function gameLoop(){
+		displayCharacters();
+		displayHaduken();
+		moveHaduken();
+		displayHaduken1();
+		moveHaduken1();
+		detectCollision();
+		displayScore();
+	}
+
+	var gameInterval = setInterval(gameLoop, 150);
+
+	function displayScore(){
+		if(character2.health<=0){
+			character2.health = 0;
+			alert("Player 1 Wins!!!");
+			clearInterval(gameInterval);
+		}else if(character1.health<=0){
+			alert("Player 2 Wins!!!");
+			character1.health = 0;
+			clearInterval(gameInterval);
+		}
+		//#region Update Character Health Bar and Health Text 
+		document.getElementById('healthBar1').style.width = character1.health*2.3;
+		document.getElementById('healthBar2').style.width = character2.health*2.3;
+		document.getElementById('healthText2').innerHTML = character2.health;
+		document.getElementById('healthText1').innerHTML = character1.health;
+		//#endregion
+	}
+	function displayHaduken() {
+		var output = '';
+		for(var i=0; i<hadukens.length; i++) {
+			output += "<div class='haduken' style='top:"+hadukens[i].top+"px; left:"+hadukens[i].left+"px;'></div>";
+		}
+		document.getElementById('hadukens').innerHTML = output;
+	}
+	function moveHaduken() {
+		for(var i=0; i<hadukens.length; i++) {
+			hadukens[i].left += 10;
+			if(hadukens[i].left > 620) {
+				hadukens[i] = hadukens[hadukens.length-1];
+				hadukens.pop();
+			}
+		}
+	}
+	function displayHaduken1() {
+		var output = '';
+		for(var i=0; i<hadukens1.length; i++) {
+			output += "<div class='haduken1' style='top:"+hadukens1[i].top+"px; left:"+hadukens1[i].left+"px; transform: scaleX(-1)'></div>";
+		}
+		document.getElementById('hadukens1').innerHTML = output;
+	}
+	function moveHaduken1() {
+		for(var i=0; i<hadukens1.length; i++) {
+			hadukens1[i].left -= 10;
+			if(hadukens1[i].left < 50) {
+				hadukens1[i] = hadukens1[hadukens1.length-1];
+				hadukens1.pop();
+			}
+		}
+	}
+	function detectCollision() {
+		for(var i=0; i<hadukens.length; i++) {
+			if(Math.abs(hadukens[i].left - character2.left) < 10 && Math.abs(hadukens[i].top - character2.top) < 50) {
+				character2.health -= 15;
+				hadukens[i] = hadukens[hadukens.length-1];
+				explode.play();
+				hadukens.pop();
+			}
+		}
+		for(var i=0; i<hadukens1.length; i++) {
+			if(Math.abs(hadukens1[i].left - character1.left) < 10 && Math.abs(hadukens1[i].top - character1.top) < 50) {
+				character1.health -= 15;
+				hadukens1[i] = hadukens1[hadukens1.length-1];
+				hadukens1.pop();
+				explode.play();
+			}
+		}
+		if(hadukens.length != 0 && hadukens1.length != 0){
+			for(var i=0; i<hadukens.length; i++){
+				for(var j=0; j<hadukens1.length; j++){
+					if(hadukens[i].left > hadukens1[i].left){
+						hadukens[i] = hadukens[hadukens.length-1];
+						hadukens.pop();
+						hadukens1[j] = hadukens1[hadukens1.length-1];
+						hadukens1.pop();
+						explode.play();
+					}
+				}
+			}
+		}
+	}
+	//#endregion
+
+	function displayCharacters(){
+		document.getElementById('character1').style.top = character1.top;
+		document.getElementById('character1').style.left = character1.left;
+
+		document.getElementById('character2').style.top = character2.top;
+		document.getElementById('character2').style.left = character2.left;
+		//#region Player1 Actions 
+		if(action == 'STANDING'){
+			document.getElementById('character1').style.background = "url('ken.png') -"+which_frame*70+"px -80px";
+			document.getElementById('character2').style.background = "url('ken.png') -"+which_frame*70+"px -80px";
+			which_frame = which_frame+1;
+
+			if(which_frame >= 4){
+				which_frame = 0;
+			}
+		}else if(action == 'PUNCH'){
+			if(which_frame == 2 && character1.left > character2.left - 50 && character1.left < character2.left + 10)
+			{
+				character2.health = character2.health-5;
+				if(character2.health<0){
+					character2.health = 0;
+				}
+				document.getElementById('healthText2').innerHTML = character2.health;
+			}
+			document.getElementById('character1').style.background = "url('ken.png') -"+which_frame*70+"px -160px";
+			which_frame = which_frame+1;
+			
+			punch.play();
+			if(which_frame >= 3)
+			{
+				which_frame = 0;
+				action = 'STANDING';
+			}
+		}
+		else if(action == 'ROUND_KICK'){
+			if(which_frame == 2 && character1.left > character2.left - 50 && character1.left < character2.left + 10){
+				character2.health = character2.health-8;
+				if(character2.health<0){
+					character2.health = 0;
+				}
+				document.getElementById('healthText2').innerHTML = character2.health;
+			}
+
+			kick.play();
+			document.getElementById('character1').style.background = "url('ken.png') -"+which_frame*70+"px -560px";
+			which_frame = which_frame+1;
+
+			if(which_frame >= 5){
+				which_frame = 0;
+				action = 'STANDING';
+			}
+		}else if(action == 'SIDE_KICK'){
+			if(which_frame == 2 && character1.left > character2.left - 50 && character1.left < character2.left + 10){
+				character2.health = character2.health-8;
+				if(character2.health<0){
+					character2.health = 0;
+				}
+				document.getElementById('healthText2').innerHTML = character2.health;
+			}
+			
+			kick.play();
+			document.getElementById('character1').style.background = "url('ken.png') -"+which_frame*70+"px -480px";
+			which_frame = which_frame+1;
+
+			if(which_frame >= 5){
+				which_frame = 0;
+				action = 'STANDING';
+			}
+		}else if(action == 'JUMP'){
+			if(which_frame>=0){
+				document.getElementById('character1').style.background = "url('ken.png') -"+which_frame*70+"px -642px";
+				which_frame = which_frame+1;
+
+				document.getElementById('character1').style.top = "160px";
+				if(which_frame >= 4){
+					which_frame = 0;
+					document.getElementById('character1').style.top = "185px";
+					action = 'STANDING';
+				}
+				jump.play();
+			}
+		}else if(action == 'DUCK'){
+			if(which_frame>=0){
+				document.getElementById('character1').style.background = "url('ken.png') -"+which_frame*70+"px -723px";
+				which_frame = which_frame+1;
+
+				if(which_frame >= 1){
+					which_frame = 0;
+					action = 'STANDING';
+				}
+			}
+		}else if(action == 'HADUKEN'){
+			document.getElementById('character1').style.background = "url('ken.png') -"+which_frame*70+"px 0px";
+			which_frame = which_frame+1;
+
+			haduken.play();
+			if(which_frame >= 4){
+				which_frame = 0;
+				action = 'STANDING';
+			}
+		}
+		//#endregion
+		//#region Player2 Actions 
+		if(action == 'PUNCH1'){
+			if(which_frame == 2 && character2.left > character1.left - 10 && character2.left < character1.left + 50)
+			{
+				character1.health = character1.health-5;
+				if(character1.health<0){
+					character1.health = 0;
+				}
+				document.getElementById('healthText1').innerHTML = character1.health;
+			}
+			document.getElementById('character2').style.background = "url('ken.png') -"+which_frame*70+"px -160px";
+			which_frame = which_frame+1;
+			
+			punch.play();
+			if(which_frame >= 3)
+			{
+				which_frame = 0;
+				action = 'STANDING';
+			}
+		}
+		else if(action == 'ROUND_KICK1'){
+			if(which_frame == 2 && character2.left > character1.left - 10 && character2.left < character1.left + 50){
+				character1.health = character1.health-8;
+				if(character1.health<0){
+					character1.health = 0;
+				}
+				document.getElementById('healthText1').innerHTML = character1.health;
+			}
+
+			kick.play();
+			document.getElementById('character2').style.background = "url('ken.png') -"+which_frame*70+"px -560px";
+			which_frame = which_frame+1;
+
+			if(which_frame >= 5){
+				which_frame = 0;
+				action = 'STANDING';
+			}
+		}else if(action == 'SIDE_KICK1'){
+			if(which_frame == 2 && character2.left > character1.left - 10 && character2.left < character1.left + 50){
+				character1.health = character1.health-8;
+				if(character1.health<0){
+					character1.health = 0;
+				}
+				document.getElementById('healthText1').innerHTML = character1.health;
+			}
+			
+			kick.play();
+			document.getElementById('character2').style.background = "url('ken.png') -"+which_frame*70+"px -480px";
+			which_frame = which_frame+1;
+
+			if(which_frame >= 5){
+				which_frame = 0;
+				action = 'STANDING';
+			}
+		}else if(action == 'JUMP1'){
+			if(which_frame>=0){
+				document.getElementById('character2').style.background = "url('ken.png') -"+which_frame*70+"px -642px";
+				which_frame = which_frame+1;
+
+				document.getElementById('character2').style.top = "160px";
+				if(which_frame >= 4){
+					which_frame = 0;
+					document.getElementById('character2').style.top = "185px";
+					action = 'STANDING';
+				}
+				jump.play();
+			}
+		}else if(action == 'DUCK1'){
+			if(which_frame>=0){
+				document.getElementById('character2').style.background = "url('ken.png') -"+which_frame*70+"px -723px";
+				which_frame = which_frame+1;
+
+				if(which_frame >= 1){
+					which_frame = 0;
+					action = 'STANDING';
+				}
+			}
+		}else if(action == 'HADUKEN1'){
+			document.getElementById('character2').style.background = "url('ken.png') -"+which_frame*70+"px 0px";
+			which_frame = which_frame+1;
+			haduken.play();
+			if(which_frame >= 4){
+				which_frame = 0;
+				action = 'STANDING';
+			}
+		}
+	}
+	//#endregion
+
+	document.onkeydown = function(e){
+		//#region Player1 Controls 
+		if(e.keyCode == 65 && character1.left > 0){ //left
+			character1.left = character1.left-10;
+			which_frame = 0;
+		}else if(e.keyCode == 68 && character1.left < 800){ //right
+			character1.left = character1.left+10;
+			which_frame = 0;
+		}else if(e.keyCode == 74){
+			action = 'PUNCH';
+		}else if(e.keyCode == 75){
+			action = 'ROUND_KICK';
+		}else if(e.keyCode == 76){
+			action = 'SIDE_KICK';
+		}else if(e.keyCode == 87){
+			action = 'JUMP';
+		}else if(e.keyCode == 83){ //s
+			action = 'DUCK';
+		}else if(e.keyCode == 32) {
+			action = 'HADUKEN';
+			hadukens.push({left: character1.left+70,top: character1.top+10});
+		}
+		//#endregion
+		//#region Player2 Controls 
+		if(e.keyCode == 37 && character2.left > 0){ //left
+			character2.left -= 10;
+		}else if(e.keyCode == 39 && character2.left < 800){ //right
+			character2.left = character2.left+10;
+		}else if(e.keyCode == 100){ //4
+			action = 'PUNCH1';
+
+		}else if(e.keyCode == 101){ //5
+			action = 'ROUND_KICK1';
+		}else if(e.keyCode == 102){ //6
+			action = 'SIDE_KICK1';
+		}else if(e.keyCode == 38){ //up
+			action = 'JUMP1';
+		}else if(e.keyCode == 40){ //down
+			action = 'DUCK1';
+		}else if(e.keyCode == 96){ //0
+			action = 'HADUKEN1';
+			hadukens1.push({left: character2.left-70,top: character2.top+10});
+		}
+		//#endregion
+		which_frame = 0;
+	}
+	displayCharacters();
+</script>

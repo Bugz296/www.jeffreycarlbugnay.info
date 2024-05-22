@@ -1,55 +1,17 @@
-const { Client } = require('@notionhq/client');
+import * as sgMail from '@sendgrid/mail';
 
-const notion = new Client({
-  auth: process.env.NOTION_API_TOKEN,
-});
+const sendEmail = (dynamic_template_data) => {
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  sgMail.send({    
+    to: "jcsbugnay@gmail.com",
+    from: "jcsbugnay+profile@gmail.com",
+    templateId: process.env.SENDGRID_TEMPLATE_ID,
+    dynamic_template_data,
+  });
+}
 
-export default async (req, res) => {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ msg: 'Only POST requests are allowed' });
-  }
-  try {
-    const { name, email, subject, message } = JSON.parse(req.body);
-    await notion.pages.create({
-      parent: {
-        database_id: process.env.NOTION_DATABASE_ID,
-      },
-      properties: {
-        Name: {
-          title: [
-            {
-              text: {
-                content: name,
-              },
-            },
-          ],
-        },
-        Email: {
-          email,
-        },
-        Subject: {
-          rich_text: [
-            {
-              text: {
-                content: subject,
-              },
-            },
-          ],
-        },
-        Message: {
-          rich_text: [
-            {
-              text: {
-                content: message,
-              },
-            },
-          ],
-        },
-      },
-    });
-    res.status(201).json({ msg: 'Success' });
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ msg: 'Failed' });
-  }
-};
+export default (req, res) => {
+  let { name: full_name, email: email_address, subject, message } = JSON.parse(req.body);
+  sendEmail({ full_name, email_address, subject, message });
+  res.status(200).json({ status: "Ok"});
+}
