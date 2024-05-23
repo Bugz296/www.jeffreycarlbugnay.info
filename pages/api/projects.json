@@ -75,10 +75,10 @@
   },
   {
     "id": 10,
-    "name": "Simple 1942 Game",
+    "name": "1942 Game",
     "image": "/e-commerce.png",
     "description": "Replication of the classic arcade game \"1942\". The project features the iconic top-down scrolling shooter gameplay where players control an aircraft, engaging in aerial combat with enemy planes. This project showcases my skills in JavaScript, HTML5 Canvas, and game development principles, demonstrating my ability to create engaging and interactive web-based games.",
-    "tags": ["php", "codeigniter", "mysql", "jquery", "bootstrap"],
+    "tags": ["javascript", "jquery"],
     "source_code": "https://github.com/Bugz296/e-commerce"
   },
   {
