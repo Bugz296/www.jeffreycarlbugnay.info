@@ -6,6 +6,7 @@ function ProfilePicture(props) {
       width={486}
       height={534}
       src="/profile1.png"
+      alt="Main Profile Picture"
     />
   );
 }
