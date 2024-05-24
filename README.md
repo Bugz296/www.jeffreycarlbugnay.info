@@ -1,9 +1,6 @@
-# vscode-portfolio
-[![Open is Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/Bugz296/vscode-portfolio)
-
 A Visual Studio Code themed developer portfolio website built with Next.js and deployed on Vercel.
 
-![vscode-portfolio banner](https://imgur.com/JXJ9mpO.gif)
+![vscode-portfolio banner](https://i.imgur.com/6KrCLpM.png)
 
 ## Features Roadmap
 
