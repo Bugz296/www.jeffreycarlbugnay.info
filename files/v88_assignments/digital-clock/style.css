@@ -1,0 +1,113 @@
+*{
+    outline: 0px dashed green;
+}
+.full-width{
+    width: 100%;
+    border: 1px solid red;
+}
+.selected{
+    border: 2px solid rgb(108, 205, 230); 
+}
+.btn{
+    padding: 0px 20px;
+    background-color: rgb(66, 64, 64);
+    cursor: pointer;
+}
+.btn:hover{
+    border: 2px solid white;
+}
+    .btn-green{
+        background-color: green;
+        color: white;
+    }
+    .btn-white{
+        background-color: white;
+        color: black;
+    }
+    .btn-red{
+        background-color: red;
+        color: white;
+    }
+select{
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.815);
+    color: black
+}
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 15px 15px;
+    padding: 20px;
+}
+    #clock{
+        margin: auto;
+        font-family: 'Digital-7';
+        width: 100%;
+    }
+        #clock thead{
+            color: white;
+        }
+        #clock tbody{
+            color: cyan;
+            font-size: 2em;
+            width: 300px;
+            padding: 20px;
+        }
+            #clock h1{
+                font-size: 5em;
+                padding: 0px;
+                margin: 0px;
+                width: 200px;
+            }
+            .meridiem{
+                font-size: 1.5em;
+                padding: 0px;
+                margin: 0px;
+                color:rgb(37, 37, 37);
+            }
+            #clock tbody .colon, .colon h1{
+                text-align: center;
+                width: 50px !important;
+            }
+            #format{
+                padding: 0px;
+                margin-top: -20px;
+            }
+                #format a{
+                    font-size: 20px;
+                    margin: 0px;
+                    padding: 0px 5px;
+                    color:rgb(37, 37, 37);
+                    border-color: 1px solid cyan;
+                }
+                #format a:hover{
+                    color: cyan;
+                    cursor: pointer;
+                    border-bottom: 1px solid cyan;
+                }
+            #format-text{
+                margin-top: 0px;
+                font-size: 12px;
+                color: rgb(8, 87, 87);
+            }
+            .highlight{
+                color: cyan !important;
+            }
+        #clock tfoot{
+            color: white;
+            padding: 20px;
+        }
+            #timezone{
+                color: white;
+                border-top: 1px solid rgb(3, 68, 68);
+                border-bottom: 1px solid rgb(3, 68, 68);
+            }
+            tfoot td{
+                padding: 10px;
+            }

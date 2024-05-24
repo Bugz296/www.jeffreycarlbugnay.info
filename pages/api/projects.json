@@ -75,18 +75,208 @@
   },
   {
     "id": 10,
-    "name": "1942 Game",
-    "image": "/e-commerce.png",
+    "name": "1942 (Recreate)",
+    "image": "/1942.png",
     "description": "Replication of the classic arcade game \"1942\". The project features the iconic top-down scrolling shooter gameplay where players control an aircraft, engaging in aerial combat with enemy planes. This project showcases my skills in JavaScript, HTML5 Canvas, and game development principles, demonstrating my ability to create engaging and interactive web-based games.",
-    "tags": ["javascript", "jquery"],
-    "source_code": "https://github.com/Bugz296/e-commerce"
+    "tags": ["javascript", "jquery", "html5", "css3"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info/tree/master/files/v88_assignments/1942",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/1942/"
   },
   {
     "id": 11,
-    "name": "Simple 1942 Game",
-    "image": "/e-commerce.png",
-    "description": "Replication of the classic arcade game \"1942\". The project features the iconic top-down scrolling shooter gameplay where players control an aircraft, engaging in aerial combat with enemy planes. This project showcases my skills in JavaScript, HTML5 Canvas, and game development principles, demonstrating my ability to create engaging and interactive web-based games.",
-    "tags": ["php", "codeigniter", "mysql", "jquery", "bootstrap"],
-    "source_code": "https://github.com/Bugz296/e-commerce"
+    "name": "Pacman (Recreate)",
+    "image": "",
+    "description": "In this project, I took on the challenge of reimagining the classic arcade game Pac-Man as a web-based application. The objective was to recreate the iconic gameplay, visuals, and mechanics of the original Pac-Man while leveraging modern web technologies.",
+    "tags": ["javascript", "jquery", "html5", "css3"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info/tree/master/files/v88_assignments/pacman",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/pacman/"
+  },
+  {
+    "id": 12,
+    "name": "Flappy Bird (Recreate)",
+    "image": "/flappybird.png",
+    "description": "This project is a web-based recreation of the iconic Flappy Bird game using modern web technologies. The game mimics the original gameplay where players control a bird navigating through a series of pipes by pressing the space bar to keep the bird in the air.",
+    "tags": ["javascript", "jquery", "html5", "css3"],
+    "source_code": "https://www.jeffreycarlbugnay.info/assignments/flappybird-remake/"
+  },
+  {
+    "id": 13,
+    "name": "Street Fighter (Recreate)",
+    "image": "",
+    "description": "This project is a web-based recreation of the classic Street Fighter game, developed using modern web technologies. The game faithfully replicates the original fighting mechanics, allowing players to select characters and engage in one-on-one combat with a computer or another player.",
+    "tags": ["javascript", "jquery", "html5", "css3"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info/tree/master/files/v88_assignments/street-fighter",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/street-fighter/game.html"
+  },
+  {
+    "id": 13,
+    "name": "Academy Ninja Master",
+    "image": "",
+    "description": "\"Academy Ninja Master\" is an interactive web development project that combines the power of JavaScript, HTML, CSS, and image assets to create an engaging and dynamic experience. In this project, the developer is tasked with animating a ninja character on the webpage, allowing users to control its movement using the arrow keys on their keyboard.",
+    "tags": ["javascript", "html5", "css3"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info/tree/master/files/v88_assignments/academy-ninja-master",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/academy-ninja-master/"
+  },
+  {
+    "id": 14,
+    "name": "Drawing Circles",
+    "image": "",
+    "description": "This project is an interactive web-based assignment where users can click anywhere on a canvas to create expanding circles. This demonstrates the ability to handle user inputs, perform real-time animations, and create interactive graphics using modern web technologies",
+    "tags": ["javascript", "jquery", "html5", "css3"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info/tree/master/files/v88_assignments/drawing-circles",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/drawing-circles/Drawing%20Circles.html"
+  },
+  {
+    "id": 15,
+    "name": "Expanding and Popping Circles",
+    "image": "",
+    "description": "This project is an interactive web-based assignment where random circles appear and expand upon page load. Each circle grows until it reaches a certain size, at which point it pops and disappears.",
+    "tags": ["javascript", "jquery", "html5", "css3"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info/tree/master/files/v88_assignments/circles",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/circles/clib.html"
+  },
+  {
+    "id": 16,
+    "name": "Drawing Shapes Assignment",
+    "image": "",
+    "description": "This project is an interactive web-based assignment named \"Drawing Shapes\", where users can select a shape to draw on a canvas. Upon clicking on the canvas, the chosen shape is rendered at the click location.",
+    "tags": ["javascript", "jquery", "html5", "css3"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info/tree/master/files/v88_assignments/drawing_shapes",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/drawing_shapes/JS%20Circles%20with%20Shapes.html"
+  },
+  {
+    "id": 17,
+    "name": "Color Clicker Assignment",
+    "image": "",
+    "description": "In this project, I developed an interactive web application called \"Color Clicker\" that explores the manipulation of colors and elements on a web page through user interactions. The project's objective was to create a simple yet engaging interface where clicking on different boxes would trigger specific color changes based on a set of predefined rules.",
+    "tags": ["javascript", "jquery", "html5", "css3"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info/tree/master/files/v88_assignments/color-clicker",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/color-clicker/color_clicker.html"
+  },
+  {
+    "id": 18,
+    "name": "Disappearing Ninja",
+    "image": "",
+    "description": "In this project, I developed an interactive web application called \"Disappearing Ninja\" that demonstrates the power of jQuery in manipulating the visibility of HTML elements on a web page. The objective was to create an engaging and visually appealing experience where users can make elements disappear with a simple click, mimicking the stealthy behavior of a ninja.",
+    "tags": ["javascript", "jquery", "html5", "css3"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info/tree/master/files/v88_assignments/disappearing-ninja",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/disappearing-ninja/disappearing_ninja.html"
+  },
+  {
+    "id": 19,
+    "name": "Hover In and Out",
+    "image": "",
+    "description": "\"Hover In and Out\" is a web-based project that demonstrates the use of jQuery to create an interactive image-switching experience. The application features a container that displays an initial image, and when the user hovers over this container, the image seamlessly transitions to a new one.",
+    "tags": ["javascript", "jquery", "html5", "css3"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info/tree/master/files/v88_assignments/hover-in-and-out",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/hover-in-and-out/hover_in_and_out.html"
+  },
+  {
+    "id": 20,
+    "name": "Ninja to Cat",
+    "image": "",
+    "description": "This is the same as \"Hover In and Out\", a web-based project that demonstrates the use of jQuery to create an interactive image-switching experience. Instead of hovering, the application features a container that displays an initial image, and when the user clicks this container, the image seamlessly transitions to a new one.",
+    "tags": ["javascript", "jquery", "html5", "css3"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info/tree/master/files/v88_assignments/ninja_to_cat",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/ninja_to_cat/ninja_to_cat.html"
+  },
+  {
+    "id": 21,
+    "name": "JQuery Functions",
+    "image": "",
+    "description": "A web development project that explores the versatility and power of the jQuery library by implementing various essential functions and features. This project serves as a practical exercise in leveraging jQuery's capabilities to enhance web applications with dynamic behavior, event handling, and DOM manipulation.",
+    "tags": ["javascript", "jquery", "html5", "css3"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info/tree/master/files/v88_assignments/jquery-functions",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/jquery-functions/jquery_functions.html"
+  },
+  {
+    "id": "",
+    "name": "Displaying Blocks",
+    "image": "",
+    "description": "\"Displaying Blocks\" is a web development project that challenges the developer to recreate a given image using the most concise and efficient code possible. This exercise tests one's ability to think creatively, optimize code, and leverage the power of HTML and CSS to achieve visual representations with minimal lines of code.",
+    "tags": ["javascript", "jquery", "html5", "css3"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info/tree/master/files/v88_assignments/displaying-blocks",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/displaying-blocks/displaying_blocks.html"
+  },
+  {
+    "id": "",
+    "name": "Javascript Basic (Static Web Page)",
+    "image": "",
+    "description": "A web development project that challenges the developer to recreate a provided image as a static web page using HTML, CSS, and JavaScript. This exercise tests the developer's ability to work under time constraints, attention to detail, and proficiency in manipulating the Document Object Model (DOM) using JavaScript.",
+    "tags": ["javascript", "jquery", "html5", "css3"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info/tree/master/files/v88_assignments/javascript-basic",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/javascript-basic/javascript_basic.html"
+  },
+  {
+    "id": "",
+    "name": "Debugging JQuery",
+    "image": "",
+    "description": "We were asked to clone the repository and correct the jQuery errors! In this project, I tackled the task of debugging and enhancing a web application that aimed to highlight HTML elements upon hovering over them. The primary objective was to ensure the proper functionality of the jQuery library in handling hover events and applying visual effects to the targeted elements.",
+    "tags": ["javascript", "jquery", "html5", "css3"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info/tree/master/files/v88_assignments/debugging-jquery",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/debugging-jquery/debugging_jquery.html"
+  },
+  {
+    "id": "",
+    "name": "Replicate Python Website",
+    "image": "",
+    "description": "In this project, I took on the challenge of replicating an old version of the official Python website using HTML and CSS. The primary objective was to accurately recreate the visual design and layout of the website, closely adhering to the provided mockup or reference images.",
+    "tags": ["javascript", "html5", "css3"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info/tree/master/files/v88_assignments/about-python",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/about-python/about_pyhton.html"
+  },
+  {
+    "id": "",
+    "name": "Plotting Blocks",
+    "image": "",
+    "description": "In this project, I took on the challenge of replicating a provided image by converting it into a static web page using HTML and CSS. The objective was to accurately recreate the visual representation of the image, including its layout, shapes, colors, and positioning, using the building blocks of web development technologies.",
+    "tags": ["javascript", "html5", "css3"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info/tree/master/files/v88_assignments/plotting-your-blocks",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/plotting-your-blocks/plotting_blocks.html"
+  },
+  {
+    "id": "",
+    "name": "Portfolio",
+    "image": "",
+    "description": "This project is part of an assignment called \"Portfolio\" for a web development course. The task was to convert an image of a portfolio layout into a static web page using only HTML and CSS. The purpose of the assignment was to practice fundamental web development skills, including layout structuring, styling, and positioning elements on a webpage without the use of advanced frameworks or libraries.",
+    "tags": ["javascript", "html5", "css3"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info/tree/master/files/v88_assignments/portfolio",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/portfolio/portfolio.html"
+  },
+  {
+    "id": "",
+    "name": "Responsive Blocks",
+    "image": "",
+    "description": "The project was completed as part of an assignment for a web development course. The objective was to convert a static image of blocks into a responsive web page using only HTML and CSS. Unlike the previous assignments, this task required creating a layout that adapts seamlessly to various screen sizes and devices, providing an optimal viewing experience for users across desktops, tablets, and smartphones.",
+    "tags": ["javascript", "html5", "css3"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info/tree/master/files/v88_assignments/responsive-blocks",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/responsive-blocks/responsive_blocks.html"
+  },
+  {
+    "id": "",
+    "name": "Responsive Portfolio",
+    "image": "",
+    "description": "The project was completed as part of an assignment for a web development course. The main objective was to convert a static image of a portfolio layout into a responsive web page using only HTML and CSS. Unlike previous assignments, this task focused on creating a responsive design that adjusts seamlessly to different screen sizes and devices, providing an optimal viewing experience for users on desktops, tablets, and smartphones.",
+    "tags": ["javascript", "html5", "css3"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info/tree/master/files/v88_assignments/responsive-portfolio",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/responsive-portfolio/responsive_portfolio.html"
+  },
+  {
+    "id": "",
+    "name": "Simply Responsive",
+    "image": "",
+    "description": "The \"Simply Responsive\" project was completed as part of an assignment for a web development course. The primary objective was to create simple web elements and ensure they are responsive to different screen sizes using only HTML and CSS. This assignment focused on mastering the basics of responsive web design by implementing fluid layouts, flexible units, and media queries to accommodate various viewport sizes and device types.",
+    "tags": ["javascript", "html5", "css3"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info/tree/master/files/v88_assignments/simply-responsive",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/simply-responsive/simply_responsive.html"
+  },
+  {
+    "id": "",
+    "name": "Digital Clock",
+    "image": "",
+    "description": "The \"Simply Responsive\" project was completed as part of an assignment for a web development course. The primary objective was to create simple web elements and ensure they are responsive to different screen sizes using only HTML and CSS. This assignment focused on mastering the basics of responsive web design by implementing fluid layouts, flexible units, and media queries to accommodate various viewport sizes and device types.",
+    "tags": ["javascript", "html5", "css3"],
+    "source_code": "https://github.com/Bugz296/www.jeffreycarlbugnay.info/tree/master/files/v88_assignments/digital-clock",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/digital-clock/simply_responsive.html"
   }
 ]

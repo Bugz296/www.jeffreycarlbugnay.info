@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Digital Clock</title>
+    </head>
+    <body>
+        <div class="container">
+            <table id="clock">
+                <thead>
+                    <tr>
+                        <td>Hours</td>
+                        <td></td>
+                        <td>Minutes</td>
+                        <td></td>
+                        <td>Seconds</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="digital-clock">
+                        <td>
+                            <h1 id="hours">00</h1>
+                        </td>
+                        <td class="colon">
+                            <h1>:</h1>
+                        </td>
+                        <td>
+                            <h1 id="minutes">00</h1>
+                        </td>
+                        <td class="colon">
+                            <h1>:</h1>
+                        </td>
+                        <td>
+                            <h1 id="seconds">00</h1>
+                        </td>
+                        <td>
+                            <h4 class="meridiem" id="am">am</h4>
+                            <h4 class="meridiem" id="pm">pm</h4>
+                            <h4 id="format-text">F O R M A T</h4>
+                            <h4 id="format">
+                                <a id="one-two">12</a>
+                                <a id="two-four" class="highlight">24</a>
+                            </h4>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan=6 id="timezone"></td>
+                    </tr>
+                    <tr>
+                        <td colspan=2>
+                            <a class="btn btn-green" id="green-btn">Green</a>
+                        </td>
+                        <td colspan=2>
+                            <a class="btn btn-white" id="white-btn">White</a>
+                        </td>
+                        <td colspan=2>
+                            <a class="btn btn-red" id="red-btn">Red</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan=6>
+                            <select id="select-timezone"></select>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div id="demo"></div>
+        <script src="main.js"></script>
+    </body>
+</html>
