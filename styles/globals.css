@@ -16,6 +16,20 @@
   background: rgba(97, 218, 251, 0.25);
 }
 
+.css3 {
+  border: 0.1rem solid rgb(97, 218, 251);
+}
+.css3:hover {
+  background: rgba(97, 218, 251, 0.25);
+}
+
+.bootstrap {
+  border: 0.1rem solid rgb(97, 218, 251);
+}
+.bootstrap:hover {
+  background: rgba(97, 218, 251, 0.25);
+}
+
 .nodeJS {
   border: 0.1rem solid rgb(131, 205, 41);
 }

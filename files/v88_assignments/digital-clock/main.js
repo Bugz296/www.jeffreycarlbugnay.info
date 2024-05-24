@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function(){
             document.getElementById("select-timezone").innerHTML = html;
         }
     };
-    getTimeZones.open("GET", "http://worldtimeapi.org/api/timezone", true);
+    getTimeZones.open("GET", "https://worldtimeapi.org/api/timezone", true);
     getTimeZones.send();
 
     //
