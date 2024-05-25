@@ -57,23 +57,6 @@
     "demo": "https://www.jeffreycarlbugnay.info/"
   },
   {
-    "id": 8,
-    "name": "The Wall",
-    "image": "/thewall.png",
-    "description": "Assignment. As part of our annual performance review, we were required to record a continuous video demonstrating the creation of basic CRUD functionalities in a web app within two hours. This task included implementing complete validation and session-cookie management. Check the live video using the link below.",
-    "tags": ["javascript", "expressJS", "nodeJS", "mysql"],
-    "source_code": "https://github.com/Bugz296/the_wall",
-    "demo": "https://www.youtube.com/watch?v=I0g3D9wldis"
-  },
-  {
-    "id": 9,
-    "name": "E-commerce",
-    "image": "/e-commerce.png",
-    "description": "E-commerce. The project was completed as part of an assignment for a web development course. The task was to create a full-fledged e-commerce website using PHP. This project involved designing and implementing various features typically found in e-commerce platforms, including user authentication, product listing, shopping cart functionality, checkout process, and order management.",
-    "tags": ["php", "codeigniter", "mysql", "jquery", "bootstrap"],
-    "source_code": "https://github.com/Bugz296/e-commerce"
-  },
-  {
     "id": 10,
     "name": "1942 (Recreate)",
     "image": "/1942.png",
@@ -181,7 +164,16 @@
     "demo": "https://www.jeffreycarlbugnay.info/assignments/hover-in-and-out/hover_in_and_out.html"
   },
   {
-    "id": 22,
+    "id": 22, 
+    "name": "Real-time Group Chat",
+    "image": "/gcsio.png",
+    "description": "Assignment. This project, completed as part of an assignment, involves developing a simple real-time group chat application using Socket.io, JavaScript, jQuery, Express, and Node.js. The application allows multiple users to join a chat room and communicate with each other in real-time.",
+    "tags": ["javascript", "expressJS", "nodeJS", "socketio", "jquery"],
+    "source_code": "https://github.com/Bugz296/group-chat-using-socket-io",
+    "demo": "https://www.jeffreycarlbugnay.info/assignments/gcsio/"
+  },
+  {
+    "id": 23,
     "name": "Ninja to Cat",
     "image": "/ninjatocat.png",
     "description": "This is the same as \"Hover In and Out\", a web-based project that demonstrates the use of jQuery to create an interactive image-switching experience. Instead of hovering, the application features a container that displays an initial image, and when the user clicks this container, the image seamlessly transitions to a new one.",
@@ -190,7 +182,7 @@
     "demo": "https://www.jeffreycarlbugnay.info/assignments/ninja_to_cat/ninja_to_cat.html"
   },
   {
-    "id": 23,
+    "id": 24,
     "name": "JQuery Functions",
     "image": "/jqueryfunctions.png",
     "description": "A web development project that explores the versatility and power of the jQuery library by implementing various essential functions and features. This project serves as a practical exercise in leveraging jQuery's capabilities to enhance web applications with dynamic behavior, event handling, and DOM manipulation.",
@@ -199,7 +191,7 @@
     "demo": "https://www.jeffreycarlbugnay.info/assignments/jquery-functions/jquery_functions.html"
   },
   {
-    "id": 24,
+    "id": 25,
     "name": "Displaying Blocks",
     "image": "/displayingblocks.png",
     "description": "\"Displaying Blocks\" is a web development project that challenges the developer to recreate a given image using the most concise and efficient code possible. This exercise tests one's ability to think creatively, optimize code, and leverage the power of HTML and CSS to achieve visual representations with minimal lines of code.",
@@ -208,7 +200,7 @@
     "demo": "https://www.jeffreycarlbugnay.info/assignments/displaying-blocks/displaying_blocks.html"
   },
   {
-    "id": 25,
+    "id": 26,
     "name": "Javascript Basic (Static Web Page)",
     "image": "/javascriptbasic.png",
     "description": "A web development project that challenges the developer to recreate a provided image as a static web page using HTML, CSS, and JavaScript. This exercise tests the developer's ability to work under time constraints, attention to detail, and proficiency in manipulating the Document Object Model (DOM) using JavaScript.",
@@ -217,7 +209,7 @@
     "demo": "https://www.jeffreycarlbugnay.info/assignments/javascript-basic/javascript_basic.html"
   },
   {
-    "id": 26,
+    "id": 27,
     "name": "Debugging JQuery",
     "image": "/debugginjquery.png",
     "description": "We were asked to clone the repository and correct the jQuery errors! In this project, I tackled the task of debugging and enhancing a web application that aimed to highlight HTML elements upon hovering over them. The primary objective was to ensure the proper functionality of the jQuery library in handling hover events and applying visual effects to the targeted elements.",
@@ -226,7 +218,7 @@
     "demo": "https://www.jeffreycarlbugnay.info/assignments/debugging-jquery/debugging_jquery.html"
   },
   {
-    "id": 27,
+    "id": 28,
     "name": "Replicate Python Website",
     "image": "/python.png",
     "description": "In this project, I took on the challenge of replicating an old version of the official Python website using HTML and CSS. The primary objective was to accurately recreate the visual design and layout of the website, closely adhering to the provided mockup or reference images.",
@@ -235,7 +227,7 @@
     "demo": "https://www.jeffreycarlbugnay.info/assignments/about-python/about_pyhton.html"
   },
   {
-    "id": 28,
+    "id": 29,
     "name": "Plotting Blocks",
     "image": "/plottingblocks.png",
     "description": "In this project, I took on the challenge of replicating a provided image by converting it into a static web page using HTML and CSS. The objective was to accurately recreate the visual representation of the image, including its layout, shapes, colors, and positioning, using the building blocks of web development technologies.",
@@ -244,7 +236,7 @@
     "demo": "https://www.jeffreycarlbugnay.info/assignments/plotting-your-blocks/plotting_blocks.html"
   },
   {
-    "id": 29,
+    "id": 30,
     "name": "Portfolio",
     "image": "/portfolio.png",
     "description": "This project is part of an assignment called \"Portfolio\" for a web development course. The task was to convert an image of a portfolio layout into a static web page using only HTML and CSS. The purpose of the assignment was to practice fundamental web development skills, including layout structuring, styling, and positioning elements on a webpage without the use of advanced frameworks or libraries.",
@@ -253,7 +245,7 @@
     "demo": "https://www.jeffreycarlbugnay.info/assignments/portfolio/portfolio.html"
   },
   {
-    "id": 30,
+    "id": 31,
     "name": "Responsive Blocks",
     "image": "/responsiveblocks.png",
     "description": "The project was completed as part of an assignment for a web development course. The objective was to convert a static image of blocks into a responsive web page using only HTML and CSS. Unlike the previous assignments, this task required creating a layout that adapts seamlessly to various screen sizes and devices, providing an optimal viewing experience for users across desktops, tablets, and smartphones.",
@@ -262,7 +254,7 @@
     "demo": "https://www.jeffreycarlbugnay.info/assignments/responsive-blocks/responsive_blocks.html"
   },
   {
-    "id": 31,
+    "id": 32,
     "name": "Responsive Portfolio",
     "image": "/responsiveportfolio.png",
     "description": "The project was completed as part of an assignment for a web development course. The main objective was to convert a static image of a portfolio layout into a responsive web page using only HTML and CSS. Unlike previous assignments, this task focused on creating a responsive design that adjusts seamlessly to different screen sizes and devices, providing an optimal viewing experience for users on desktops, tablets, and smartphones.",
@@ -271,7 +263,7 @@
     "demo": "https://www.jeffreycarlbugnay.info/assignments/responsive-portfolio/responsive_portfolio.html"
   },
   {
-    "id": 32,
+    "id": 33,
     "name": "Simply Responsive",
     "image": "/simplyresponsive.png",
     "description": "The \"Simply Responsive\" project was completed as part of an assignment for a web development course. The primary objective was to create simple web elements and ensure they are responsive to different screen sizes using only HTML and CSS. This assignment focused on mastering the basics of responsive web design by implementing fluid layouts, flexible units, and media queries to accommodate various viewport sizes and device types.",

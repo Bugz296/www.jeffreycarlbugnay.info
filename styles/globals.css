@@ -30,6 +30,13 @@
   background: rgba(97, 218, 251, 0.25);
 }
 
+.socketio {
+  border: 0.1rem solid rgb(9, 94, 117);
+}
+.socketio:hover {
+  background: rgba(9, 94, 117, 0.25);
+}
+
 .nodeJS {
   border: 0.1rem solid rgb(131, 205, 41);
 }
