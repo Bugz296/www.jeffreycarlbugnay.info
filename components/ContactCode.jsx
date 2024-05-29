@@ -19,7 +19,7 @@ const contactItems = [
   {
     social: 'linkedin',
     link: 'jeffrey-carl',
-    href: 'www.linkedin.com/in/jeffrey-carl',
+    href: 'https://www.linkedin.com/in/jeffrey-carl',
   },
   {
     social: 'instagram',

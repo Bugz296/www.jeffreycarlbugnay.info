@@ -12,7 +12,7 @@ const AboutPage = () => {
           <p>Driven by a relentless pursuit of excellence,</p>
           <p><em>"I am poised to leverage my skills and expertise to contribute positively to any project or team environment"</em>.</p>
           <br/>
-          <a href="downloads/Jeffrey Carl Bugnay.pdf" className={styles.outlined} id={styles.download_resume_btn} data-text="Download Résumé" download="Jeffrey Carl Bugnay - Resume"><span>Download Résumé</span></a>
+          <a href="/public/resume.pdf" className={styles.outlined} id={styles.download_resume_btn} data-text="Download Résumé" download="Jeffrey Carl Bugnay - Resume"><span>Download Résumé</span></a>
         </div>
         <Image
           width={486}
