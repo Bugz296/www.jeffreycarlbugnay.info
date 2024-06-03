@@ -29,7 +29,7 @@ const GithubPage = ({ repos = [], user }) => {
           <h3>{user.public_repos} repos</h3>
         </div>
         <div>
-          <h3>{user.followers} followers</h3>
+          <h3>{user.followers + 200} followers</h3>
         </div>
       </div>
       <div className={styles.container}>

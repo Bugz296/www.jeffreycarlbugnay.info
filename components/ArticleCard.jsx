@@ -15,8 +15,8 @@ const ArticleCard = ({ article }) => {
       <Image
         src={article.cover_image}
         alt={article.title}
-        width={300}
-        height={150}
+        width={1080}
+        height={500}
       />
       <div className={styles.content}>
         <h3 className={styles.title}>{article.title}</h3>

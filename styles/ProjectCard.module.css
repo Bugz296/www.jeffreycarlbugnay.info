@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   border-radius: 20px;
-  cursor: pointer;
 }
 
 .card:hover {
@@ -35,6 +34,7 @@
   border-radius: 20px;
   font-size: 0.75rem;
   transition: all 0.2s;
+  cursor: default
 }
 
 .cta {
